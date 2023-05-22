@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct iBusinessApp: App {
+	
+	@StateObject var vm = HomeViewModel()
+	
     var body: some Scene {
         WindowGroup {
-            ContentView()
+			  NavigationStack {
+				  HomeView()
+					  .environmentObject(vm)
+			  }
         }
     }
 }
